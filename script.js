@@ -29,3 +29,11 @@ console.log(job);
  isMarried = false;
 
  console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+
+ // Variable mutation
+age = 'twenty';
+job = 'testing';
+
+alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+var lastName = prompt('What is his last Name?');
+console.log(firstName + ' ' + lastName);
