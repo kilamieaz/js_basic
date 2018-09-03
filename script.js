@@ -1,3 +1,5 @@
+// Data Types
+/**
 var firstName = 'Sultan';
 console.log(firstName);
 
@@ -12,3 +14,18 @@ console.log(job);
 
 job = 'Teacher';
 console.log(job);
+ */
+
+ // Variable mutation and type coercion
+
+ var firstName = 'Sultan';
+ var age = 20;
+
+ // Type coercion
+ console.log(firstName + ' ' + age);
+
+ var job, isMarried;
+ job = 'webdev';
+ isMarried = false;
+
+ console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
