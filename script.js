@@ -47,6 +47,9 @@ console.log(firstName + ' ' + lastName);
  // Math operators
  var yearSultan = now - ageSultan;
  var yearMark = now - ageMark;
- console.log(yearJohn);
+ console.log(yearSultan);
  console.log(now + 2);
 
+ // Logical operators
+var sultanOlder = ageSultan > ageMark;
+console.log(sultanOlder);
