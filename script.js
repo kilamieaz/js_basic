@@ -116,3 +116,17 @@ if (isMarried) {
 } else {
     console.log(firstName + ' will hopefully marry soon :)');
 }
+
+var massSultan = 50;
+var massMark = 60;
+var heightSultan = 170;
+var heightMark = 180;
+
+var bmiSultan = massSultan / (heightSultan * heightSultan);
+var bmiMark = massMark / (heightMark * heightMark);
+
+if (bmiMark > bmiSultan) {
+    console.log('Mark\'s BMI higher than Sultan\'s');
+} else {
+    console.log('Sultan\'s BMI is higher than Mark\'s')    
+}
