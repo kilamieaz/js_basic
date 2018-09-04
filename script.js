@@ -53,3 +53,10 @@ console.log(firstName + ' ' + lastName);
  // Logical operators
 var sultanOlder = ageSultan > ageMark;
 console.log(sultanOlder);
+
+// typeof operator
+console.log(typeof sultanOlder);
+console.log(typeof ageSultan);
+console.log(typeof 'Mark is older than sultan');
+var x;
+console.log(typeof x);
