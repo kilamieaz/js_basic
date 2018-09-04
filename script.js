@@ -40,7 +40,7 @@ console.log(firstName + ' ' + lastName);
  */
 
  //Basic operators
-
+/**
  var now = 2018;
  var ageSultan = 20;
  var ageMark = 33;
@@ -60,3 +60,30 @@ console.log(typeof ageSultan);
 console.log(typeof 'Mark is older than sultan');
 var x;
 console.log(typeof x);
+ */
+
+// Operator precedence
+
+var now = 2018;
+var yearSultan = 1998;
+var fullAge = 18;
+
+var isFullAge = now - yearSultan >= fullAge;
+console.log(isFullAge);
+
+var ageSultan = now - yearSultan;
+var ageMark = 35;
+var average = (ageSultan + ageMark)/2;
+console.log(average);
+
+// Multiple assignments
+var x, y;
+x = y = (3 + 5) * 4 - 6; //8 * 4 - 6 // 32 - 6 // 26
+console.log(x, y);
+
+// More operators
+x *= 2;
+console.log(x);
+x += 10;
+console.log(x);
+X++;
