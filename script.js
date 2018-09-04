@@ -101,32 +101,47 @@ console.log(typeof x);
 
 // if / else statements
 
-var firstName = 'Sultan';
-var civilStatus = 'single';
+// var firstName = 'Sultan';
+// var civilStatus = 'single';
 
-if (civilStatus === 'married') {
-    console.log(firstName + ' is married!');
+// if (civilStatus === 'married') {
+//     console.log(firstName + ' is married!');
+// } else {
+//     console.log(firstName + ' will hopefully marry soon :)');
+// }
+
+// var isMarried = true;
+// if (isMarried) {
+//     console.log(firstName + ' is married!');
+// } else {
+//     console.log(firstName + ' will hopefully marry soon :)');
+// }
+
+// var massSultan = 50;
+// var massMark = 60;
+// var heightSultan = 170;
+// var heightMark = 180;
+
+// var bmiSultan = massSultan / (heightSultan * heightSultan);
+// var bmiMark = massMark / (heightMark * heightMark);
+
+// if (bmiMark > bmiSultan) {
+//     console.log('Mark\'s BMI higher than Sultan\'s');
+// } else {
+//     console.log('Sultan\'s BMI is higher than Mark\'s')    
+// }
+
+// boolean logic
+
+var firstname = 'Sultan';
+var age = 20;
+
+if (age < 13) {
+    console.log(firstName + ' is a boy.');
+} else if (age >= 12 && age < 20){ //between 13 and 20
+    console.log(firstName + ' is a teenager.');
+} else if (age >= 20 && age < 30){
+    console.log(firstName + ' is a young man.');
 } else {
-    console.log(firstName + ' will hopefully marry soon :)');
-}
-
-var isMarried = true;
-if (isMarried) {
-    console.log(firstName + ' is married!');
-} else {
-    console.log(firstName + ' will hopefully marry soon :)');
-}
-
-var massSultan = 50;
-var massMark = 60;
-var heightSultan = 170;
-var heightMark = 180;
-
-var bmiSultan = massSultan / (heightSultan * heightSultan);
-var bmiMark = massMark / (heightMark * heightMark);
-
-if (bmiMark > bmiSultan) {
-    console.log('Mark\'s BMI higher than Sultan\'s');
-} else {
-    console.log('Sultan\'s BMI is higher than Mark\'s')    
+    console.log(firstName + ' is a man.');
 }
