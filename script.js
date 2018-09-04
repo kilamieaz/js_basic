@@ -133,15 +133,33 @@ console.log(typeof x);
 
 // boolean logic
 
-var firstname = 'Sultan';
-var age = 20;
+// var firstname = 'Sultan';
+// var age = 20;
 
-if (age < 13) {
-    console.log(firstName + ' is a boy.');
-} else if (age >= 12 && age < 20){ //between 13 and 20
-    console.log(firstName + ' is a teenager.');
-} else if (age >= 20 && age < 30){
-    console.log(firstName + ' is a young man.');
+// if (age < 13) {
+//     console.log(firstName + ' is a boy.');
+// } else if (age >= 12 && age < 20){ //between 13 and 20
+//     console.log(firstName + ' is a teenager.');
+// } else if (age >= 20 && age < 30){
+//     console.log(firstName + ' is a young man.');
+// } else {
+//     console.log(firstName + ' is a man.');
+// }
+
+// The Ternary Operator and Switch Statements
+
+var firstName = 'Sultan';
+var age = '16';
+
+// Ternary Operator
+age >= 18 ? console.log(firstName + ' drinks coffee.') 
+: console.log(firstName + ' drinks juice.');
+
+var drink = age >= 18 ? 'coffee' : 'juice';
+console.log(drink);
+
+if (age >= 18){
+    var drink = 'coffee';
 } else {
-    console.log(firstName + ' is a man.');
+    var drink = 'juice';
 }
