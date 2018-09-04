@@ -64,26 +64,36 @@ console.log(typeof x);
 
 // Operator precedence
 
-var now = 2018;
-var yearSultan = 1998;
-var fullAge = 18;
+// var now = 2018;
+// var yearSultan = 1998;
+// var fullAge = 18;
 
-var isFullAge = now - yearSultan >= fullAge;
-console.log(isFullAge);
+// var isFullAge = now - yearSultan >= fullAge;
+// console.log(isFullAge);
 
-var ageSultan = now - yearSultan;
-var ageMark = 35;
-var average = (ageSultan + ageMark)/2;
-console.log(average);
+// var ageSultan = now - yearSultan;
+// var ageMark = 35;
+// var average = (ageSultan + ageMark)/2;
+// console.log(average);
 
-// Multiple assignments
-var x, y;
-x = y = (3 + 5) * 4 - 6; //8 * 4 - 6 // 32 - 6 // 26
-console.log(x, y);
+// // Multiple assignments
+// var x, y;
+// x = y = (3 + 5) * 4 - 6; //8 * 4 - 6 // 32 - 6 // 26
+// console.log(x, y);
 
-// More operators
-x *= 2;
-console.log(x);
-x += 10;
-console.log(x);
-X++;
+// // More operators
+// x *= 2;
+// console.log(x);
+// x += 10;
+// console.log(x);
+// X++;
+
+var massSultan = 50;
+var massMark = 60;
+var heightSultan = 170;
+var heightMark = 180;
+
+var bmiSultan = massSultan / (heightSultan * heightSultan);
+var bmiMark = massMark / (heightMark * heightMark);
+var markHigherBmi = bmiMark > bmiSultan;
+console.log('Is mark\'s BMI higher than Sultan\'s? ' + markHigherBmi);
