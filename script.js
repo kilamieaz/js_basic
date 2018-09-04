@@ -88,12 +88,31 @@ console.log(typeof x);
 // console.log(x);
 // X++;
 
-var massSultan = 50;
-var massMark = 60;
-var heightSultan = 170;
-var heightMark = 180;
+//BMI
+// var massSultan = 50;
+// var massMark = 60;
+// var heightSultan = 170;
+// var heightMark = 180;
 
-var bmiSultan = massSultan / (heightSultan * heightSultan);
-var bmiMark = massMark / (heightMark * heightMark);
-var markHigherBmi = bmiMark > bmiSultan;
-console.log('Is mark\'s BMI higher than Sultan\'s? ' + markHigherBmi);
+// var bmiSultan = massSultan / (heightSultan * heightSultan);
+// var bmiMark = massMark / (heightMark * heightMark);
+// var markHigherBmi = bmiMark > bmiSultan;
+// console.log('Is mark\'s BMI higher than Sultan\'s? ' + markHigherBmi);
+
+// if / else statements
+
+var firstName = 'Sultan';
+var civilStatus = 'single';
+
+if (civilStatus === 'married') {
+    console.log(firstName + ' is married!');
+} else {
+    console.log(firstName + ' will hopefully marry soon :)');
+}
+
+var isMarried = true;
+if (isMarried) {
+    console.log(firstName + ' is married!');
+} else {
+    console.log(firstName + ' will hopefully marry soon :)');
+}
