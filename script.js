@@ -201,15 +201,30 @@ console.log(typeof x);
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
 
-var height;
-height = 23;
-if (height || hegiht === 0){
-    console.log('variable is defined');
-} else{
-    console.log('variable has NOT been defined');
-}
+// var height;
+// height = 23;
+// if (height || height === 0){
+//     console.log('variable is defined');
+// } else{
+//     console.log('variable has NOT been defined');
+// }
 
-// Equality operators
-if (height == '23') {
-    console.log('the == operator dose type coercion!');
+// // Equality operators
+// if (height == '23') {
+//     console.log('the == operator dose type coercion!');
+// }
+
+var scoreSultan = (89 + 120 + 103) / 3;
+var scoreMike = (116 + 94 + 123) / 3;
+var scoreMary = (97 + 134 + 105) / 3;
+console.log(scoreSultan, scoreMike);
+
+if (scoreSultan > scoreMike && scoreSultan > scoreMary) {
+    console.log('Sultan\'s team wins with ' + scoreSultan + ' points');
+} else if (scoreMike > scoreSultan && scoreMike > scoreMary) {
+    console.log('Mike\'s team wins with ' + scoreMike + ' points');
+} else if (scoreMary > scoreSultan && scoreMary > scoreSultan) {
+    console.log('Mary\'s team wins with ' + scoreMary + ' points');
+} else {
+    console.log('There is a draw');
 }
