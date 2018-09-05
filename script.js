@@ -261,19 +261,49 @@ console.log(typeof x);
 // }
 
 // Function expression
-var whatDoYouDo = function(job, firstName){
-    switch(job) {
-        case 'teacher':
-            return firstName + ' teaches kids how to code.';
-        case 'driver':
-            return firstName + ' drives a cab in Jakarta';
-        case 'designer':
-            return firstName + ' designs beautiful websites';
-        default:
-            return firstName + ' does something else';
-    }
-}
+// var whatDoYouDo = function(job, firstName){
+//     switch(job) {
+//         case 'teacher':
+//             return firstName + ' teaches kids how to code.';
+//         case 'driver':
+//             return firstName + ' drives a cab in Jakarta';
+//         case 'designer':
+//             return firstName + ' designs beautiful websites';
+//         default:
+//             return firstName + ' does something else';
+//     }
+// }
 
-console.log(whatDoYouDo('teacher', 'Sultan'));
-console.log(whatDoYouDo('designer', 'Mike'));
-console.log(whatDoYouDo('retired', 'Jane'));
+// console.log(whatDoYouDo('teacher', 'Sultan'));
+// console.log(whatDoYouDo('designer', 'Mike'));
+// console.log(whatDoYouDo('retired', 'Jane'));
+
+
+// Arrays
+
+// Initialize new array
+var names = ['Sultan', 'Mark', 'Jane'];
+var years = new Array(1990 , 1996, 1948);
+
+console.log(names[0]);
+console.log(names.lenght);
+
+// Mutate Array data
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// Different data types
+
+var sultan = ['Sultan', 'Muttaqin', 1998, 'webdev', false];
+
+sultan.push('blue');
+sultan.unshift('Mr.');
+console.log(sultan);
+sultan.pop();
+sultan.shift();
+console.log(sultan);
+
+console.log(sultan.indexOf(1998));
+var isDesigner = sultan.indexOf('designer') === -1 ? 'Sultan is Not a designer' : 'Sultan Is a designer';
+console.log(isDesigner);
