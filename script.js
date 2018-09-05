@@ -202,9 +202,14 @@ console.log(typeof x);
 // truthy values: NOT falsy values
 
 var height;
-height = 0;
+height = 23;
 if (height || hegiht === 0){
     console.log('variable is defined');
 } else{
     console.log('variable has NOT been defined');
+}
+
+// Equality operators
+if (height == '23') {
+    console.log('the == operator dose type coercion!');
 }
