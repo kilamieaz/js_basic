@@ -214,17 +214,41 @@ console.log(typeof x);
 //     console.log('the == operator dose type coercion!');
 // }
 
-var scoreSultan = (89 + 120 + 103) / 3;
-var scoreMike = (116 + 94 + 123) / 3;
-var scoreMary = (97 + 134 + 105) / 3;
-console.log(scoreSultan, scoreMike);
+// var scoreSultan = (89 + 120 + 103) / 3;
+// var scoreMike = (116 + 94 + 123) / 3;
+// var scoreMary = (97 + 134 + 105) / 3;
+// console.log(scoreSultan, scoreMike);
 
-if (scoreSultan > scoreMike && scoreSultan > scoreMary) {
-    console.log('Sultan\'s team wins with ' + scoreSultan + ' points');
-} else if (scoreMike > scoreSultan && scoreMike > scoreMary) {
-    console.log('Mike\'s team wins with ' + scoreMike + ' points');
-} else if (scoreMary > scoreSultan && scoreMary > scoreSultan) {
-    console.log('Mary\'s team wins with ' + scoreMary + ' points');
-} else {
-    console.log('There is a draw');
+// if (scoreSultan > scoreMike && scoreSultan > scoreMary) {
+//     console.log('Sultan\'s team wins with ' + scoreSultan + ' points');
+// } else if (scoreMike > scoreSultan && scoreMike > scoreMary) {
+//     console.log('Mike\'s team wins with ' + scoreMike + ' points');
+// } else if (scoreMary > scoreSultan && scoreMary > scoreSultan) {
+//     console.log('Mary\'s team wins with ' + scoreMary + ' points');
+// } else {
+//     console.log('There is a draw');
+// }
+
+// functions
+
+function calculateAge(birthYear) {
+    return 2018 - birthYear;
 }
+
+// var ageJohn = calculateAge(1990);
+// console.log(ageJohn);
+
+function yearsUntilRetirement(year, firstName)
+{
+    var age = calculateAge(year);
+    var retirement = 60 - age;
+    if (retirement > 0) {
+        console.log(firstName + ' retires in ' + retirement + ' years.');
+    } else {
+        console.log(firstName + ' is already retired.');
+    }
+}
+
+yearsUntilRetirement(1998, 'Sultan');
+yearsUntilRetirement(1990, 'Mike');
+yearsUntilRetirement(1945, 'jane');
