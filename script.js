@@ -231,24 +231,49 @@ console.log(typeof x);
 
 // functions
 
-function calculateAge(birthYear) {
-    return 2018 - birthYear;
-}
+// function calculateAge(birthYear) {
+//     return 2018 - birthYear;
+// }
 
-// var ageJohn = calculateAge(1990);
-// console.log(ageJohn);
+// // var ageJohn = calculateAge(1990);
+// // console.log(ageJohn);
 
-function yearsUntilRetirement(year, firstName)
-{
-    var age = calculateAge(year);
-    var retirement = 60 - age;
-    if (retirement > 0) {
-        console.log(firstName + ' retires in ' + retirement + ' years.');
-    } else {
-        console.log(firstName + ' is already retired.');
+// function yearsUntilRetirement(year, firstName)
+// {
+//     var age = calculateAge(year);
+//     var retirement = 60 - age;
+//     if (retirement > 0) {
+//         console.log(firstName + ' retires in ' + retirement + ' years.');
+//     } else {
+//         console.log(firstName + ' is already retired.');
+//     }
+// }
+
+// yearsUntilRetirement(1998, 'Sultan');
+// yearsUntilRetirement(1990, 'Mike');
+// yearsUntilRetirement(1945, 'jane');
+
+
+// Function Statements and Expressions
+// Function declaration
+// function whatDoYouDo(job, firstName){
+
+// }
+
+// Function expression
+var whatDoYouDo = function(job, firstName){
+    switch(job) {
+        case 'teacher':
+            return firstName + ' teaches kids how to code.';
+        case 'driver':
+            return firstName + ' drives a cab in Jakarta';
+        case 'designer':
+            return firstName + ' designs beautiful websites';
+        default:
+            return firstName + ' does something else';
     }
 }
 
-yearsUntilRetirement(1998, 'Sultan');
-yearsUntilRetirement(1990, 'Mike');
-yearsUntilRetirement(1945, 'jane');
+console.log(whatDoYouDo('teacher', 'Sultan'));
+console.log(whatDoYouDo('designer', 'Mike'));
+console.log(whatDoYouDo('retired', 'Jane'));
