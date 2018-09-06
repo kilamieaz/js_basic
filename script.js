@@ -403,37 +403,108 @@ console.log(typeof x);
 
 // Loops and iteration
 // For loop
-for (var i = 0; i < 10; i++){
-    console.log(i);
+// for (var i = 0; i < 10; i++){
+//     console.log(i);
+// }
+
+// var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
+
+// for (var i = 0; i < sultan.length; i++){
+//     console.log(sultan[i]);
+// }
+
+// // While loop
+// var i = 0;
+// while(i < sultan.length) {
+//     console.log(sultan[i]);
+//     i++;
+// }
+
+// // continue and break statements
+// var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
+// console.log(sultan.length);
+// for (var i = 0; i < sultan.length; i++){
+//     if (typeof sultan[i] !== 'string') continue;
+//     console.log(sultan[i]);
+// }
+
+// for (var i = 0; i < sultan.length; i++){
+//     if (typeof sultan[i] !== 'string') break;
+//     console.log(sultan[i]);
+// }
+
+// // Looping backwards
+// for (var i = sultan.length - 1; i >= 0; i--){
+//     console.log(sultan[i]);
+// }
+
+// example 
+var sultan = {
+    fullName: 'Sultan imam',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function() {
+        this.tips = [];
+        this.finalValues = [];
+        for (var i = 0; i < this.bills.length; i++){
+            // Determine percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+            if (bill < 50) {
+                percentage = .2;
+            } else if(bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+            // Add results to the corresponing arrays
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;``
+        }
+    }
 }
 
-var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
-
-for (var i = 0; i < sultan.length; i++){
-    console.log(sultan[i]);
+var mark = {
+    fullName: 'Mark bob',
+    bills: [77, 375, 110, 45, 42],
+    calcTips: function() {
+        this.tips = [];
+        this.finalValues = [];
+        for (var i = 0; i < this.bills.length; i++){
+            // Determine percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+            if (bill < 100) {
+                percentage = .2;
+            } else if(bill >= 100 && bill <= 300) {
+                percentage = .1;
+            } else {
+                percentage = .25;
+            }
+            // Add results to the corresponing arrays
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;``
+        }
+    }
 }
 
-// While loop
-var i = 0;
-while(i < sultan.length) {
-    console.log(sultan[i]);
-    i++;
+function calcAverage(tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
 }
+// 2, 6, 4 -> 0 / 2 / 8 / 12
 
-// continue and break statements
-var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
-console.log(sultan.length);
-for (var i = 0; i < sultan.length; i++){
-    if (typeof sultan[i] !== 'string') continue;
-    console.log(sultan[i]);
-}
+// Do the calculations
+sultan.calcTips();
+mark.calcTips();
+sultan.average = calcAverage(sultan.tips);
+mark.average   = calcAverage(mark.tips);
+console.log(sultan, mark);
 
-for (var i = 0; i < sultan.length; i++){
-    if (typeof sultan[i] !== 'string') break;
-    console.log(sultan[i]);
-}
-
-// Looping backwards
-for (var i = sultan.length - 1; i >= 0; i--){
-    console.log(sultan[i]);
+if (sultan.average > mark.average) {
+    console.log(sultan.fullName + '\'s family pays higher tips, with an average af $' + sultan.average);
+} else if (mark.average > john.average) {
+    console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + marka.average)
 }
