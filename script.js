@@ -329,26 +329,43 @@ console.log(typeof x);
 // Objects and Properties
 
 // Object literal
+// var sultan = {
+//     firstName: 'Sultan',
+//     lastName: 'Smith',
+//     birthYear: '1998',
+//     family: ['Mark', 'Jane', 'Bob'],
+//     job: 'webdev',
+//     isMarried: 'false'
+// };
+// console.log(sultan.firstName);
+// console.log(sultan['lastName']);
+// var x = 'birthYear';
+// console.log(sultan[x])
+
+// sultan.job = 'designer';
+// sultan['isMarried'] = true;
+// console.log(sultan);
+
+// // New Object Syntax
+// var jane = new Object();
+// jane.firstName = 'Jane';
+// jane.birthYear = 1999;
+// jane['lastName'] = 'Smith';
+// console.log(jane);
+
+
+// Objects and Methods
+
 var sultan = {
     firstName: 'Sultan',
     lastName: 'Smith',
     birthYear: '1998',
     family: ['Mark', 'Jane', 'Bob'],
     job: 'webdev',
-    isMarried: 'false'
+    isMarried: 'false',
+    calcAge: function(birthYear) {
+        this.age = 2018 - this.birthYear;
+    }
 };
-console.log(sultan.firstName);
-console.log(sultan['lastName']);
-var x = 'birthYear';
-console.log(sultan[x])
-
-sultan.job = 'designer';
-sultan['isMarried'] = true;
+sultan.calcAge();
 console.log(sultan);
-
-// New Object Syntax
-var jane = new Object();
-jane.firstName = 'Jane';
-jane.birthYear = 1999;
-jane['lastName'] = 'Smith';
-console.log(jane);
