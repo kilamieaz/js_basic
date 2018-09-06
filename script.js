@@ -356,46 +356,84 @@ console.log(typeof x);
 
 // Objects and Methods
 
-var sultan = {
-    firstName: 'Sultan',
-    lastName: 'Smith',
-    birthYear: '1998',
-    family: ['Mark', 'Jane', 'Bob'],
-    job: 'webdev',
-    isMarried: 'false',
-    calcAge: function(birthYear) {
-        this.age = 2018 - this.birthYear;
-    }
-};
-sultan.calcAge();
-console.log(sultan);
+// var sultan = {
+//     firstName: 'Sultan',
+//     lastName: 'Smith',
+//     birthYear: '1998',
+//     family: ['Mark', 'Jane', 'Bob'],
+//     job: 'webdev',
+//     isMarried: 'false',
+//     calcAge: function(birthYear) {
+//         this.age = 2018 - this.birthYear;
+//     }
+// };
+// sultan.calcAge();
+// console.log(sultan);
 
-//example BMI
-var sultan = {
-    fullName: 'Sultan imam',
-    mass: 55,
-    height: 1.70,
-    calcBmi: function() {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
-}
-var mark = {
-    fullName: 'Mark bob',
-    mass: 78,
-    height: 1.80,
-    calcBmi: function() {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
+// //example BMI
+// var sultan = {
+//     fullName: 'Sultan imam',
+//     mass: 55,
+//     height: 1.70,
+//     calcBmi: function() {
+//         this.bmi = this.mass / (this.height * this.height);
+//         return this.bmi;
+//     }
+// }
+// var mark = {
+//     fullName: 'Mark bob',
+//     mass: 78,
+//     height: 1.80,
+//     calcBmi: function() {
+//         this.bmi = this.mass / (this.height * this.height);
+//         return this.bmi;
+//     }
+// }
+
+// sultan.calcBmi();
+// mark.calcBmi();
+// if (sultan.calcBmi() > mark.calcBmi()) {
+//     console.log(sultan.fullName + ' has a higher BMI of ' + john.bmi);
+// } else if (mark.calcBmi() > sultan.calcBmi()){
+//     console.log(mark.fullName + ' has a highter BMI of ' + mark.bmi);
+// } else {
+//     console.log('They have the same BMI');
+// }
+
+
+// Loops and iteration
+// For loop
+for (var i = 0; i < 10; i++){
+    console.log(i);
 }
 
-sultan.calcBmi();
-mark.calcBmi();
-if (sultan.calcBmi() > mark.calcBmi()) {
-    console.log(sultan.fullName + ' has a higher BMI of ' + john.bmi);
-} else if (mark.calcBmi() > sultan.calcBmi()){
-    console.log(mark.fullName + ' has a highter BMI of ' + mark.bmi);
-} else {
-    console.log('They have the same BMI');
+var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
+
+for (var i = 0; i < sultan.length; i++){
+    console.log(sultan[i]);
+}
+
+// While loop
+var i = 0;
+while(i < sultan.length) {
+    console.log(sultan[i]);
+    i++;
+}
+
+// continue and break statements
+var sultan = ['Sultan', 'Imam', 1998, 'webdev', false];
+console.log(sultan.length);
+for (var i = 0; i < sultan.length; i++){
+    if (typeof sultan[i] !== 'string') continue;
+    console.log(sultan[i]);
+}
+
+for (var i = 0; i < sultan.length; i++){
+    if (typeof sultan[i] !== 'string') break;
+    console.log(sultan[i]);
+}
+
+// Looping backwards
+for (var i = sultan.length - 1; i >= 0; i--){
+    console.log(sultan[i]);
 }
