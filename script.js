@@ -369,3 +369,33 @@ var sultan = {
 };
 sultan.calcAge();
 console.log(sultan);
+
+//example BMI
+var sultan = {
+    fullName: 'Sultan imam',
+    mass: 55,
+    height: 1.70,
+    calcBmi: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+var mark = {
+    fullName: 'Mark bob',
+    mass: 78,
+    height: 1.80,
+    calcBmi: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+sultan.calcBmi();
+mark.calcBmi();
+if (sultan.calcBmi() > mark.calcBmi()) {
+    console.log(sultan.fullName + ' has a higher BMI of ' + john.bmi);
+} else if (mark.calcBmi() > sultan.calcBmi()){
+    console.log(mark.fullName + ' has a highter BMI of ' + mark.bmi);
+} else {
+    console.log('They have the same BMI');
+}
