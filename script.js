@@ -308,19 +308,47 @@ console.log(typeof x);
 // var isDesigner = sultan.indexOf('designer') === -1 ? 'Sultan is Not a designer' : 'Sultan Is a designer';
 // console.log(isDesigner);
 
-function tipCalculator(bill) {
-    var percentage;
-    if (bill < 50) {
-        percentage = .2;
-    } else if (bill >= 50 && bill < 200) {
-        percentage = .15;
-    } else {
-        percentage = .1;
-    }
-    return percentage * bill;
-}
+// function tipCalculator(bill) {
+//     var percentage;
+//     if (bill < 50) {
+//         percentage = .2;
+//     } else if (bill >= 50 && bill < 200) {
+//         percentage = .15;
+//     } else {
+//         percentage = .1;
+//     }
+//     return percentage * bill;
+// }
 
-var bills = [124, 48, 268];
-var tips = [tipCalculator(bills[0]), tipCalculator(bills[1]), tipCalculator(bills[2])];
-var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(tips, finalValues);
+// var bills = [124, 48, 268];
+// var tips = [tipCalculator(bills[0]), tipCalculator(bills[1]), tipCalculator(bills[2])];
+// var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(tips, finalValues);
+
+
+// Objects and Properties
+
+// Object literal
+var sultan = {
+    firstName: 'Sultan',
+    lastName: 'Smith',
+    birthYear: '1998',
+    family: ['Mark', 'Jane', 'Bob'],
+    job: 'webdev',
+    isMarried: 'false'
+};
+console.log(sultan.firstName);
+console.log(sultan['lastName']);
+var x = 'birthYear';
+console.log(sultan[x])
+
+sultan.job = 'designer';
+sultan['isMarried'] = true;
+console.log(sultan);
+
+// New Object Syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1999;
+jane['lastName'] = 'Smith';
+console.log(jane);
