@@ -282,28 +282,45 @@ console.log(typeof x);
 // Arrays
 
 // Initialize new array
-var names = ['Sultan', 'Mark', 'Jane'];
-var years = new Array(1990 , 1996, 1948);
+// var names = ['Sultan', 'Mark', 'Jane'];
+// var years = new Array(1990 , 1996, 1948);
 
-console.log(names[0]);
-console.log(names.lenght);
+// console.log(names[0]);
+// console.log(names.lenght);
 
-// Mutate Array data
-names[1] = 'Ben';
-names[names.length] = 'Mary';
-console.log(names);
+// // Mutate Array data
+// names[1] = 'Ben';
+// names[names.length] = 'Mary';
+// console.log(names);
 
-// Different data types
+// // Different data types
 
-var sultan = ['Sultan', 'Muttaqin', 1998, 'webdev', false];
+// var sultan = ['Sultan', 'Muttaqin', 1998, 'webdev', false];
 
-sultan.push('blue');
-sultan.unshift('Mr.');
-console.log(sultan);
-sultan.pop();
-sultan.shift();
-console.log(sultan);
+// sultan.push('blue');
+// sultan.unshift('Mr.');
+// console.log(sultan);
+// sultan.pop();
+// sultan.shift();
+// console.log(sultan);
 
-console.log(sultan.indexOf(1998));
-var isDesigner = sultan.indexOf('designer') === -1 ? 'Sultan is Not a designer' : 'Sultan Is a designer';
-console.log(isDesigner);
+// console.log(sultan.indexOf(1998));
+// var isDesigner = sultan.indexOf('designer') === -1 ? 'Sultan is Not a designer' : 'Sultan Is a designer';
+// console.log(isDesigner);
+
+function tipCalculator(bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage = .2;
+    } else if (bill >= 50 && bill < 200) {
+        percentage = .15;
+    } else {
+        percentage = .1;
+    }
+    return percentage * bill;
+}
+
+var bills = [124, 48, 268];
+var tips = [tipCalculator(bills[0]), tipCalculator(bills[1]), tipCalculator(bills[2])];
+var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(tips, finalValues);
