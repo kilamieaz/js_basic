@@ -509,6 +509,7 @@ console.log(typeof x);
 //     console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + marka.average)
 // }
 
+/** how javascript works */
 
 // hoisting
 // calculateAge(1998);
@@ -537,33 +538,67 @@ console.log(typeof x);
 
 // scoping 
 // example 1
-var a = 'Hello';
-first();
+// var a = 'Hello';
+// first();
 
-function first() {
-    var b = 'Hi!';
-    second();
-    function second() {
-        var c = 'Hey!';
-        console.log(a + b + c);
+// function first() {
+//     var b = 'Hi!';
+//     second();
+//     function second() {
+//         var c = 'Hey!';
+//         console.log(a + b + c);
+//     }
+// }
+
+// // example 2
+// var a = 'Hello';
+// first();
+
+// function first() {
+//     var b = 'Hi!';
+//     second();
+//     function second() {
+//         var c = 'Hey!';
+//         third();
+//     }
+// }
+
+// function third() {
+//     var d = 'Sultan';
+//     // console.log(c); // is not defined
+//     console.log(a+d);
+// }
+
+// the this keyword
+
+// console.log(this);
+
+// calculateAge(1998);
+
+// function calculateAge(year) {
+//     console.log(2018 - year);
+//     console.log(this);
+// }
+
+var sultan = {
+    name: 'sultan',
+    yearOfbirth: 1998,
+    calculateAge: function() {
+        console.log(this);
+        console.log(2016 - this.yearOfbirth);
+        // function innerFunction() {
+        //     console.log(this);
+        // }
+        // innerFunction();
     }
 }
 
-// example 2
-var a = 'Hello';
-first();
+sultan.calculateAge();
 
-function first() {
-    var b = 'Hi!';
-    second();
-    function second() {
-        var c = 'Hey!';
-        third();
-    }
+var mike = {
+    name: 'mike',
+    yearOfbirth: 1984
 }
 
-function third() {
-    var d = 'Sultan';
-    // console.log(c); // is not defined
-    console.log(a+d);
-}
+mike.calculateAge = john.calculateAge;
+mike.calculateAge();
