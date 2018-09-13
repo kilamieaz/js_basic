@@ -548,3 +548,22 @@ function first() {
         console.log(a + b + c);
     }
 }
+
+// example 2
+var a = 'Hello';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+    function second() {
+        var c = 'Hey!';
+        third();
+    }
+}
+
+function third() {
+    var d = 'Sultan';
+    // console.log(c); // is not defined
+    console.log(a+d);
+}
