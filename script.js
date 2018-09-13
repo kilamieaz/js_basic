@@ -511,26 +511,40 @@ console.log(typeof x);
 
 
 // hoisting
-calculateAge(1998);
+// calculateAge(1998);
 
-function calculateAge(year) {
-    console.log(2018 - year);
+// function calculateAge(year) {
+//     console.log(2018 - year);
+// }
+
+// // retirement(1956) = error
+// var retirement = function(year) {
+//     console.log(65 - (2018 - year));
+// }
+
+// // variables
+
+// console.log(age); // undefined
+// var age = 20;
+// console.log(age);
+
+// function foo() {
+//     var age = 65;
+//     console.log(age);  
+// }
+// foo();// 65
+// console.log(age); // 20
+
+// scoping 
+// example 1
+var a = 'Hello';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+    function second() {
+        var c = 'Hey!';
+        console.log(a + b + c);
+    }
 }
-
-// retirement(1956) = error
-var retirement = function(year) {
-    console.log(65 - (2018 - year));
-}
-
-// variables
-
-console.log(age); // undefined
-var age = 20;
-console.log(age);
-
-function foo() {
-    var age = 65;
-    console.log(age);  
-}
-foo();// 65
-console.log(age); // 20
