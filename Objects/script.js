@@ -224,3 +224,6 @@ var emily = {
 
 // call method (want to use presentation method from jhon, but setting the this variable to "emily")
 sultan.presentation.call(emily, 'formal', 'afternoon')
+
+// apply method
+sultan.presentation.apply(emily,['friendly', 'afternoon']);
