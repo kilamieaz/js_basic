@@ -166,7 +166,7 @@ interviewQuestion('teacher')('Mark');
  */
 
  // Closures
-
+/**
  function retirement(retirementAge) {
      var a = ' years left until retirement.'
      return function (yearOfBirth) {
@@ -200,3 +200,27 @@ var interviewAnother = interviewQuestion('another');
 interviewDesigner('sultan')
 interviewTeacher('sultan')
 interviewAnother('sultan')
+*/
+
+var sultan = {
+    name: 'sultan',
+    age: 20,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', Ladies and gentleman! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+}
+sultan.presentation('formal', 'morning')
+
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
+
+// call method (want to use presentation method from jhon, but setting the this variable to "emily")
+sultan.presentation.call(emily, 'formal', 'afternoon')
