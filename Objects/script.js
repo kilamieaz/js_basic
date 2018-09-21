@@ -201,7 +201,7 @@ interviewDesigner('sultan')
 interviewTeacher('sultan')
 interviewAnother('sultan')
 */
-
+/**
 var sultan = {
     name: 'sultan',
     age: 20,
@@ -229,6 +229,7 @@ sultan.presentation.call(emily, 'formal', 'afternoon')
 // sultan.presentation.apply(emily,['friendly', 'afternoon']);
 
 // bind method
+
 // carrying = we create function based on another function with some preset parameter
 var sultanFriendly = sultan.presentation.bind(sultan, 'friendly');
 sultanFriendly('morning');
@@ -257,3 +258,73 @@ var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages)
 console.log(fullJapan)
+ */
+
+// Fun quiz
+
+function Question(question, possibleAnswer, correctAnswer){
+    this.question = question;
+    this.possibleAnswer = possibleAnswer;
+    this.correctAnswer = correctAnswer;
+};
+
+Question.prototype.displayQuestion = 
+function() {
+    console.log(this.question);
+    for (var i = 0; i < this.possibleAnswer.length; i++){
+        console.log(i + ' : ' +  this.possibleAnswer[i])
+    }
+};
+
+Question.prototype.checkAnswer = 
+function(ans, callback) {
+    var sc;
+    if (ans === this.correctAnswer){
+        console.log('Correct answer!')
+        sc = callback(true);
+    } else {
+        console.log('Wrong answer. Try again :)')
+        sc = callback(false);
+    }
+    this.displayScore(sc);
+};
+
+Question.prototype.displayScore = 
+function(score){
+    console.log('Your current score is: ' + score);
+    console.log('--------------------------------')
+};
+
+var question1 = new Question('Best language programming', ['javascript','python'], 0);
+var question2 = new Question('are you alive', ['yes','no'], 0);
+// console.log(question1);
+// console.log(question2);
+
+function score() {
+    var sc = 0;
+    return function(correct) {
+        if(correct) {
+            sc++;
+        }
+        return sc;
+    }
+}
+
+var keepScore = score();
+
+function nextQuestion() {
+    var questions = [question1, question2];
+    // console.log(questions);
+    var randomNumber = Math.floor(Math.random() * questions.length);
+    
+    questions[randomNumber].displayQuestion();
+    
+    var answer = prompt('Please select the correct answer.');
+    
+    if (answer !== 'exit') {
+        questions[randomNumber].checkAnswer(parseInt(answer), keepScore);
+        nextQuestion();
+    }
+}
+
+nextQuestion();
