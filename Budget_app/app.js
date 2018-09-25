@@ -21,8 +21,21 @@ var budgetController = (function() {
         totals: {
             exp: 0,
             inc: 0
-        }
+        },
+        budget: 0,
+        percentage: -1
     };
+
+    var calculateTotal = function(type) {
+        var sum = 0;
+        // sum all element of an array using forEach
+        data.allItems[type].forEach(function(cur) {
+            // sum = sum + cur.value;
+            sum += cur.value;
+        });
+        data.totals[type] = sum;
+    };
+
     return {
         addItem: function(type, des, val) {
             var newItem, ID;
@@ -42,6 +55,28 @@ var budgetController = (function() {
             data.allItems[type].push(newItem);
             // return the new element
             return newItem;
+        },
+        calculateBudget: function() {
+            // calculate total income and expenses
+            calculateTotal('exp');
+            calculateTotal('inc');
+            // calculate the budget: income - expenses
+            data.budget = data.totals.inc - data.totals.exp;
+            // calculate the percentage if income that we spent
+            if (data.totals.inc > 0) {
+                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+            } else {
+                data.prcentage = -1;
+            }
+            // expense 100 and income 200, spent 50% = 100/200 = 0.5 * 100
+        },
+        getBudget: function() {
+            return {
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage,
+            }
         },
         testing: function() {
             console.log(data);
@@ -114,8 +149,11 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
     var updateBudget = function() {
         // calculate the budget
+        budgetCtrl.calculateBudget();
         // return the budget
-        // display the budget on the UI  
+        var budget = budgetCtrl.getBudget();
+        // display the budget on the UI
+        console.log(budget);
     };
     var ctrlAddItem = function() {
         var input, newItem;
