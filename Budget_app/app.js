@@ -90,7 +90,7 @@ var UIController = (function() {
             fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputValue);
             // return field(list) to array
             fieldArr = Array.prototype.slice.call(fields);
-            fieldArr.fonEach(function(current, index, array) {
+            fieldArr.forEach(function(current, index, array) {
                 current.value = "";
             });
             fieldArr[0].focus();
