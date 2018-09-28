@@ -1,4 +1,5 @@
 // Lecture: let and const
+/**
 // ES5
 var name5 = 'sultan imam';
 var age5 = 23;
@@ -48,3 +49,22 @@ for (let i = 0; i < 5; i++) {
     console.log(i);
 }
 console.log(i);
+*/
+
+
+// Lecture: blocks and IIFEs
+
+// ES5 (IIFE)
+(function() {
+    var c = 3;
+})();
+
+// ES6 (block)
+{
+    const a = 1;
+    let b = 2;
+    var c = 3;
+}
+
+console.log(c);
+console.log(a + b);
