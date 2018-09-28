@@ -95,7 +95,7 @@ console.log(`${firstName} `.repeat(5));
  */
 
  // Lecture: Arrow functions (basic)
-
+/**
  const years = [1990, 1965, 1982, 1935];
  // ES5
  var ages5 = years.map(function(el) {
@@ -143,19 +143,18 @@ const box6 = {
     }
 }
 box6.clickMe();
-/**
-const box66 = {
-    color: 'green',
-    position: 1,
-    clickMe: () => {          // be carefull
-        document.querySelector('.green').addEventListener('click', () => {
-            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
-            alert(str);
-        });
-    }
-}
-box66.clickMe();
- */
+
+// const box66 = {
+//     color: 'green',
+//     position: 1,
+//     clickMe: () => {          // be carefull
+//         document.querySelector('.green').addEventListener('click', () => {
+//             var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+//             alert(str);
+//         });
+//     }
+// }
+// box66.clickMe();
 
  // Lecture: arrrow function (lexical this keyword)
  function Person(name) {
@@ -182,3 +181,37 @@ function(friends) {
 }
 
 new Person('Imam').myFriends6(friends);
+*/
+
+// Lecture: Destructuring
+
+// ES5
+var sultan = ['sultan', 20];
+var name5 = sultan[0];
+var age5 = sultan[1];
+
+// ES6 (Destructuring!) we destructured
+const [name6, age6] = ['sultan', 20];
+console.log(name6);
+console.log(age6);
+
+const obj = {
+    firstName: 'sultan',
+    lastName: 'imam'
+};
+const {firstName, lastName} = obj;
+console.log(firstName);
+console.log(lastName);
+
+const {firstName: a, lastName: b} = obj;
+console.log(a);
+console.log(b);
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age, retirement] = calcAgeRetirement(1998);
+console.log(age);
+console.log(retirement);
