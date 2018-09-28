@@ -71,6 +71,7 @@ console.log(a + b);
  */
 
 //  Lecture: strings?
+/**
 let firstName = 'sultan';
 let lastName  = 'imam';
 const yearOfBirth = 1998;
@@ -91,3 +92,27 @@ console.log(n.endsWith('s'));
 console.log(n.includes('s'));
 console.log(firstName.repeat(5));
 console.log(`${firstName} `.repeat(5));
+ */
+
+ // Lecture: Arrow functions
+
+ const years = [1990, 1965, 1982, 1935];
+ // ES5
+ var ages5 = years.map(function(el) {
+    return 2018 - el;
+ });
+console.log(ages5);
+
+// ES6
+let ages6 = years.map(el => 2018 - el);
+console.log(ages6);
+
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2018 - el}.`);
+console.log(ages6);
+
+ages6 = years.map((el, index) => {
+    const now = new Date().getFullYear();
+    const age = now - el;
+    return `Age element ${index + 1}: ${age}.`;
+});
+console.log(ages6);
