@@ -53,7 +53,7 @@ console.log(i);
 
 
 // Lecture: blocks and IIFEs
-
+/**
 // ES5 (IIFE)
 (function() {
     var c = 3;
@@ -68,3 +68,26 @@ console.log(i);
 
 console.log(c);
 console.log(a + b);
+ */
+
+//  Lecture: strings?
+let firstName = 'sultan';
+let lastName  = 'imam';
+const yearOfBirth = 1998;
+
+function calcAge(year) {
+    return 2018 - year;
+}
+
+// ES5
+console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today, he is ' + calcAge(yearOfBirth) + ' years old.');
+
+// ES6 (template literals)
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`)
+
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('s'));
+console.log(n.endsWith('s'));
+console.log(n.includes('s'));
+console.log(firstName.repeat(5));
+console.log(`${firstName} `.repeat(5));
