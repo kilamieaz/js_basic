@@ -184,7 +184,7 @@ new Person('Imam').myFriends6(friends);
 */
 
 // Lecture: Destructuring
-
+/**
 // ES5
 var sultan = ['sultan', 20];
 var name5 = sultan[0];
@@ -215,3 +215,51 @@ function calcAgeRetirement(year) {
 const [age, retirement] = calcAgeRetirement(1998);
 console.log(age);
 console.log(retirement);
+*/
+
+// Lecture: Arrays
+
+const boxes = document.querySelectorAll('.box');
+// console.log(boxes); //(nodeList = browser api)
+
+// ES5
+var boxesArr5 = Array.prototype.slice.call(boxes);
+// console.log(boxesArr5); //(array = javascript api)
+boxesArr5.forEach(function(cur) {
+    cur.style.backgroundColor = 'dodgerBlue';
+})
+
+// ES6
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerBlue');
+
+// ES5
+for(var i = 0; i < boxesArr5.length ; i++){
+    if(boxesArr5[i].className === 'box blue') {
+        continue;
+        //break;
+    }
+    boxesArr5[i].textContent = 'I changed to blue';
+}
+
+// ES6 (FOR OF)
+for (const cur of boxesArr6) {
+    if (boxesArr6.className.includes('blue')) {
+        continue;
+    }
+    cur.textContent = 'I changed to blue';
+}
+
+
+// ES5
+var ages = [12, 17, 7, 21 , 13, 11];
+var full = ages.map(function(cur) {
+    return cur >= 18;
+});
+console.log(full); 
+console.log(full.indexOf(true)); //3
+console.log(ages[full.indexOf(true)]); //21
+
+//ES6
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(cur => cur >= 18));
