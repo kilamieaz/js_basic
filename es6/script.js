@@ -300,7 +300,7 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 */
 
 // Lecture: Rest parameters
-
+/**
 // // ES5
 // function isFullAge5() {
 //     // console.log(arguments);
@@ -337,3 +337,27 @@ function isFullAge6(limit,...years) {
     years.forEach(cur => console.log((2018 - cur) >= limit));
 }
 isFullAge6(16, 1998, 2003, 2002);
+*/
+
+// Lecture: default parameters
+
+// ES5
+// function SmithPerson(firstname, yearOfBirth, lastName, nationality) {
+//     lastName == undefined ? lastName = 'smith' : lastName = lastName;
+//     nationality == undefined ? nationality = 'indonesia' : nationality = nationality;
+//     this.firstname = firstname;
+//     this.lastName = lastName;
+//     this.yearOfBirth = yearOfBirth;
+//     this.nationality = nationality;
+// }
+
+// ES6
+function SmithPerson(firstname, yearOfBirth, lastName = 'Smith', nationality = 'indonesia') {
+    this.firstname = firstname;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
+
+var sultan = new SmithPerson('sultan', 1998);
+var emily = new SmithPerson('emily', 1994, 'diaz', 'spanish');
