@@ -218,7 +218,7 @@ console.log(retirement);
 */
 
 // Lecture: Arrays
-
+/**
 const boxes = document.querySelectorAll('.box');
 // console.log(boxes); //(nodeList = browser api)
 
@@ -263,3 +263,37 @@ console.log(ages[full.indexOf(true)]); //21
 //ES6
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(cur => cur >= 18));
+*/
+
+// lecture: Spread operator
+
+function addFourAges (a, b, c, d) {
+    return a + b + c +d;
+}
+
+var sum1 = addFourAges(18, 35, 12, 21);
+console.log(sum1);
+
+// ES5
+var ages = [18, 35, 12 , 21];
+var sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
+
+// ES6 (spread operator)
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+const familySultan = ['sultan', 'imam', 'muttaqin'];
+const familyMiller = ['mary', 'bob', 'smith'];
+const bigFamily = [...familySultan,...familyMiller];
+console.log(bigFamily);
+
+const h = document.querySelector('h1');
+const boxes = document.querySelectorAll('.box');
+const all = [h,...boxes];
+console.log(h);
+console.log(boxes);
+console.log(all);
+
+Array.from(all).forEach(cur => cur.style.color = 'purple');
+// all.forEach(cur => cur.style.color = 'purple');
