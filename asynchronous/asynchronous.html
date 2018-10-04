@@ -43,8 +43,9 @@
         }
         getRecipe();
         */
-
+       
         // Promise
+        
         const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([523, 883, 432, 974]);
@@ -68,7 +69,8 @@
                 }, 1000, publisher);
             });
         };
-
+        // cara 1
+        /**
         getIDs
         .then(IDs => {
             console.log(IDs);
@@ -85,6 +87,19 @@
         .catch(error => {
             console.log('Error!!'); 
         })
+        */
+
+        //cara 2 (Async/await)
+        async function getRecipesAW() {
+            const IDs = await getIDs;
+            console.log(IDs);
+            const recipe = await getRecipe(IDs[2]);
+            console.log(recipe);
+            const related = await getRelated('jhon');
+            console.log(related);
+            return recipe;
+        }
+        getRecipesAW().then(result => console.log(`${result} is the best ever`));
     </script>
 </body>
 </html>
