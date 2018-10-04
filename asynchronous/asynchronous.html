@@ -43,9 +43,8 @@
         }
         getRecipe();
         */
-       
         // Promise
-        
+        /**
         const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([523, 883, 432, 974]);
@@ -70,24 +69,22 @@
             });
         };
         // cara 1
-        /**
-        getIDs
-        .then(IDs => {
-            console.log(IDs);
-            return getRecipe(IDs[2]);
-        })
-        .then(recipe => {
-            console.log(recipe);
-            // return getRecipe(recipe.publisher);
-            return getRelated('jhon');
-        })
-        .then(recipe => {
-            console.log(recipe);
-        })
-        .catch(error => {
-            console.log('Error!!'); 
-        })
-        */
+        // getIDs
+        // .then(IDs => {
+        //     console.log(IDs);
+        //     return getRecipe(IDs[2]);
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        //     // return getRecipe(recipe.publisher);
+        //     return getRelated('jhon');
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        // })
+        // .catch(error => {
+        //     console.log('Error!!'); 
+        // })
 
         //cara 2 (Async/await)
         async function getRecipesAW() {
@@ -100,6 +97,22 @@
             return recipe;
         }
         getRecipesAW().then(result => console.log(`${result} is the best ever`));
+        */
+        function getWeather(woeid) {
+            fetch(`https://cors.io/?https://www.metaweather.com/api/location/${woeid}/`)
+            .then(result => {
+                console.log(result);
+                return result.json();  //promise
+            })
+            .then(data => {
+                    //console.log(data);
+                    const today = data.consolidated_weather[0];
+                    console.log(`temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`)
+            })
+            .catch(error => console.log(error));
+        }
+        getWeather(2487956);
+        getWeather(44418);
     </script>
 </body>
 </html>
